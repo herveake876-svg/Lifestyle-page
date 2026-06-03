@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
        Fait apparaître les éléments avec la classe 'scroll-reveal'
        uniquement lorsqu'ils entrent dans l'écran.
     ========================================================= */
-    const revealElements = document.querySelectorAll('.scroll-reveal');
+    const revealElements = document.querySelectorAll('.scroll-reveal'); 
 
     // Configuration de l'observateur
     const observerOptions = {
