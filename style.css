@@ -1,0 +1,116 @@
+/* --- Variables et configuration de base --- */
+:root {
+    --primary-color: #1DB954; /* Vert Spotify */
+    --accent-color: #ff3366; /* Couleur néon pour le texte */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden; /* Empêche le scroll horizontal */
+}
+
+/* Utilitaires typographiques */
+.fw-extrabold { font-weight: 800; }
+.tracking-wide { letter-spacing: 0.2em; }
+.letter-spacing { letter-spacing: 0.1em; }
+
+/* --- Section Hero et Arrière-plan --- */
+.hero-bg {
+    /* Remplace cette URL par la pochette de ton single */
+    background: url('https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+    filter: brightness(0.4); /* Assombrit l'image pour que le texte reste lisible */
+    transform: scale(1.05); /* Prépare l'image pour un effet de zoom lent */
+    animation: slowZoom 20s infinite alternate;
+}
+
+/* Bouton Spotify personnalisé */
+.btn-spotify {
+    background-color: var(--primary-color);
+    color: black;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-spotify:hover {
+    background-color: #1ed760;
+    color: black;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(29, 185, 84, 0.4);
+}
+
+/* Effets de survol génériques */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+    transform: translateY(-3px);
+}
+.hover-color {
+    transition: color 0.3s ease;
+}
+.hover-color:hover {
+    color: var(--primary-color) !important;
+}
+
+/* --- ANIMATIONS CSS --- */
+
+/* 1. Apparition du texte au chargement */
+.fade-in-up {
+    animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Effet Néon sur le titre */
+.glow-text {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px var(--accent-color);
+}
+
+/* 3. Zoom lent du fond (Effet Parallaxe fluide) */
+@keyframes slowZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+/* 4. Flèche qui rebondit pour inviter au scroll */
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(-20px) translateX(-50%); }
+    60% { transform: translateY(-10px) translateX(-50%); }
+}
+
+/* 5. Bouton principal qui pulse pour attirer l'oeil */
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(29, 185, 84, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(29, 185, 84, 0); }
+}
+
+/* --- Apparition au scroll (Géré avec JS) --- */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
