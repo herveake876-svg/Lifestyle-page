@@ -16,11 +16,16 @@ body {
 
 /* --- Section Hero et Arrière-plan --- */
 .hero-bg {
-    /* Remplace cette URL par la pochette de ton single */
     background: url('./photo/tofground.jpeg') center/cover no-repeat;
-    filter: brightness(0.4); /* Assombrit l'image pour que le texte reste lisible */
-    transform: scale(1.05); /* Prépare l'image pour un effet de zoom lent */
+    
+    /* 1. LA MAGIE EST ICI : On combine blur (flou) et brightness (assombrissement) séparés par un espace */
+    filter: blur(6px) brightness(0.5); 
+    
+    /* 2. J'ai passé le scale à 1.1 au lieu de 1.05 pour bien cacher les bordures floues */
+    transform: scale(1.1); 
+    
     animation: slowZoom 20s infinite alternate;
+
 }
 
 /* Bouton Spotify personnalisé */
