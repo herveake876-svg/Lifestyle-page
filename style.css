@@ -8,7 +8,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden; /* Empêche le scroll horizontal */ 
 }
-
+  
 /* Utilitaires typographiques */
 .fw-extrabold { font-weight: 800; }
 .tracking-wide { letter-spacing: 0.2em; }
